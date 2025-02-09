@@ -1,4 +1,4 @@
-import { Tabs, useLocalSearchParams, useRouter } from "expo-router";
+import { Tabs, useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { useEffect } from "react";
 
@@ -21,8 +21,22 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
+          title: "Home",
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "home-sharp" : "home-outline"}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="receive"
+        options={{
+          title: "Receive?",
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
               name={focused ? "home-sharp" : "home-outline"}
@@ -35,6 +49,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="settings"
         options={{
+          title: "Settings",
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
               name={focused ? "settings-sharp" : "settings-outline"}

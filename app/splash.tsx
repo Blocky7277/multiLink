@@ -7,7 +7,7 @@ export default function Splash() {
   const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
-      router.replace("/(tabs)");
+      router.replace("/(tabs)/home");
     }, 400);
   });
 
